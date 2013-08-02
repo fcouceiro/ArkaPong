@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/btn_menu"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_alignLeft="@+id/btn_retry"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="136dp"
+        android:text="@string/menubtn" />
+
+    <Button
+        android:id="@+id/btn_retry"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_above="@+id/btn_menu"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="23dp"
+        android:text="@string/Retrystr" />
+
+</RelativeLayout>
