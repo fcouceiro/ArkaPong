@@ -43,7 +43,7 @@ public class Level implements Screen{
 		Bola_img = new Sprite(new Texture(Gdx.files.internal("gfx/bola.png")));
 		ball.setDrawable(new TextureRegionDrawable(Bola_img));
 		ball.setSize(GameMain.s_width/25, GameMain.s_width/25);
-		ball.setPosition(GameMain.s_width/2, GameMain.s_height/2);
+	
 		
 		
 		
@@ -96,7 +96,7 @@ public class Level implements Screen{
 	@Override
 	public void show() {
 		// TODO Auto-generated method stub
-		
+		ball.setPosition(GameMain.s_width/2, GameMain.s_height/2);
 	}
 	@Override
 	public void hide() {
@@ -116,7 +116,7 @@ public class Level implements Screen{
 	@Override
 	public void dispose() {
 		// TODO Auto-generated method stub
-		
+		stage.dispose();
 		
 	}
 	

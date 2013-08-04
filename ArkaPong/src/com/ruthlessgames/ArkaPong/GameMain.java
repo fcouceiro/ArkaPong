@@ -18,6 +18,7 @@ public class GameMain extends Game {
 	static float s_width;
 	static float s_height;
 	AndroidBridge androidbridge;
+	Level lvl_actual;
 	
 	public GameMain(AndroidBridge AB){
 		androidbridge = AB;
@@ -33,14 +34,15 @@ public class GameMain extends Game {
 		batch = new SpriteBatch();
 		
 		background = new Sprite(new Texture(Gdx.files.internal("gfx/bg.png")));
-		startlvl(1);
+		
 		
 		
 		
 	}
 	public void startlvl(int lvl){
-		Level temp = new Level(lvl, 10,false, background, this);
-		setScreen(temp);
+		lvl_actual = null;
+		lvl_actual = new Level(lvl, 10,false, background, this);
+		setScreen(lvl_actual);
 	}
 	@Override
 	public void dispose() {
