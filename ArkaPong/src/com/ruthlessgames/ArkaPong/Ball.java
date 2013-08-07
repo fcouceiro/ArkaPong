@@ -11,16 +11,16 @@ public class Ball extends Image{
 	
 	Ball(int t){
 		this.tipo = t;
-		velocity = new Vector2(1,-1);
+		velocity = new Vector2(1,1);
 		switch(t){
 			case 0:{
 				this.power = 10;
-				this.speed = 1f;
+				this.speed = 3f;
 				break;
 			}
 			case 1:{
 				this.power = 20;
-				this.speed = 3f;
+				this.speed = 6f;
 				break;
 			}
 		}

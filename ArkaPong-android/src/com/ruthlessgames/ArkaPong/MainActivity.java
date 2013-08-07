@@ -61,7 +61,7 @@ public class MainActivity extends AndroidApplication implements AndroidBridge, O
         ((Button) RetryView.findViewById(R.id.btn_retry)).setOnClickListener(this);
         
         MainLayout.addView(GameView);
-        //RetryView.setVisibility(View.GONE);
+        RetryView.setVisibility(View.GONE);
         
         MainLayout.addView(RetryView);
         setContentView(MainLayout);
