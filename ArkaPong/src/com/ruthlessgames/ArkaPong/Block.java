@@ -1,6 +1,7 @@
 package com.ruthlessgames.ArkaPong;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
@@ -10,9 +11,10 @@ public class Block extends Image{
 	int hp;
 	int armor; //Regenera com timer
 	boolean estatico;
-	
+	Sound sound;
 	
 	Block(int t, boolean estatico){
+		sound = Gdx.audio.newSound(Gdx.files.internal("sfx/block_collision.wav"));
 		this.tipo = t;
 		switch(t){
 			case 0:{

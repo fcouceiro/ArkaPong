@@ -5,6 +5,7 @@ import java.util.Random;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.Texture;
@@ -32,9 +33,12 @@ public class Level implements Screen{
 	Sprite Bola_img;
 	Sprite Bloco_img;
 	int b_height = (int) (GameMain.s_height/25);
+	Music music;
 	
 	Level(int lvl, boolean timed, Sprite bg, GameMain GM)
 	{
+		this.music = Gdx.audio.newMusic(Gdx.files.internal("sfx/Lvl1.mp3"));
+		music.setLooping(true);
 		this.gamemain = GM;
 		this.waitscreen = new WaitScreen();
 		player = new Player();
@@ -150,6 +154,7 @@ public class Level implements Screen{
 		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 		
+		music.play();
 		stage.act(delta);
 		stage.draw();
 		update();
@@ -205,6 +210,7 @@ public class Level implements Screen{
 		for(Block cur_block: this.blocks)
 		{
 			if(cur_block.collision(ball, player)){
+				cur_block.sound.play();
 				if(cur_block.subhealth(ball.power)==0 && cur_block != player){
 					table.removeActor(cur_block);
 					To_remove.add(cur_block);
